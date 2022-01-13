@@ -228,4 +228,4 @@ Publish the website in the given URL.
 
 ## Result:
 
-Thus a website is designed to perform mathematical calculations in the client side.
+Thus a website is designed to perform mathematical calculations in the client side
