@@ -38,193 +38,289 @@ Publish the website in the given URL.
 ```
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematical Calculations</title>
-    <style>
-        *{
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        body{
-            background-image: url("/static/image/2.jpg");
-        }
-        .container{
-            width: 1080px;
-            margin-left: auto;
-            margin-right: auto;
-            border:#540688;
-        }
-        .content{
-            display: block;
-            width: 100%;
-            background-image: url("/static/image/3.jpg");
-            color: black;
-            margin-top: 40px;
-            min-height: 400px;
-        }
-        .text{
-            text-align: center;
-            padding-top: 50px;
-            text-decoration: underline;
-        }
-        .formelement{
-            text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 25px;
-            margin-top: 5px;
-            margin-bottom: 5px;
+  <meta charset="UTF-8">
 
-        }
-        .content2{
-            display: block;
-            width: 100%;
-            background-image: url("/static/image/3.jpg");
-            color: black;
-            margin-top: px;
-            min-height: 400px;
-        }
-        .by{
-            text-align: center;
-            color: rgb(245, 240, 240);
-        }
-        .red{
-            text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 25px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-    </style>
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volume Calculator</title>
 </head>
+<style>
+  body {
+    background-color: #7f5a83;
+    background-image: url('/static/image/2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: sticky;
+    background-size: cover;
+  }
 
+  .container {
+    display: flex;
+    grid-gap: 50px;
+    width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content {
+    display: block;
+    width: 100%;
+    background-color: white;
+    opacity: 60%;
+    min-height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: inset 0 0 15px black;
+    backdrop-filter: blur(9px);
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+  }
+
+  .content2 {
+    display: block;
+    width: 100%;
+    background-color: white;
+    opacity: 60%;
+    min-height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    box-shadow: inset 0 0 15px black;
+    backdrop-filter: blur(9px);
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+  }
+
+  .fbox {
+    display: block;
+    width: 100%;
+    background-color: white;
+    opacity: 60%;
+    min-height: 100px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    box-shadow: inset 0 0 15px black;
+    backdrop-filter: blur(9px);
+    border-radius: 10px;
+    border: 1px solid whitesmoke;
+  }
+
+  .button {
+    background-color: orangered;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: Century Gothic, sans-serif;
+  }
+
+  h1 {
+    text-align: center;
+    padding-top: 50px;
+    color: rgb(36, 23, 23);
+  }
+
+  .formelement {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+  }
+
+  .formula {
+    text-align: center;
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .footer p {
+    margin: 0;
+    line-height: 26px;
+    font-size: 15px;
+    color: #990099;
+  }
+
+  .footer p a {
+    background: linear-gradient(to right, #f27121, #e94057, #8a2387);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-decoration: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d86939;
+    border-radius: 3px;
+  }
+</style>
 
 <body>
-<div class="container">
-  <div class="content">
-            <h1 class="text">Volume of the cylinder</h1>
-            <form>
-                <div class=formelement>
-                    <lable for="bedit">Radius:</lable>
-                    <input type="text" id="bedit" value=""/>Meters
-                </div><br>
-                <div class=formelement>
-                    <lable for="aedit">Height:</lable>
-                    <input type="text" id="aedit" value=""/>Meters
-                </div><br>
-                
-                <div class="red">
-                    <input type="button" value="CALCULATE" id="calbutton1"/>
-                </div>
-                <div class=formelement>
-                    <lable for="cedit">Volume:</lable>
-                    <input type="text" id="cedit" readonly="0"/>Cubic Meters
-                </div><br>
-                <div class="formelement">
-                    Formula : Volume=(π*Radius<sup>2</sup>*Height)
-                    </div><br>
-               
-            </form>
-        </div>
-        <div class="content2">
-            <h1 class="text">Volume of the Cone</h1>
-            <form>
-                <div class="formelement"><label for="hEdit">Height:</label>
-                    <input type="number" id="hEdit" value=""/>
-                    <lable for="aedit">Meters</lable>
-                </div><br>
-                
-                <div class="formelement">
-                    <label for="rEdit">Radius:</label>
-                    <input type="number" id="rEdit" value=""/>
-                    <lable for="aedit">Meters</lable>
-                </div>
-                <div class="red">
-                    <input type="button" value="Calculate" id="AddButton1"/>
-                </div>
-                
-                <div class="formelement">
-                    <label for="vEdit">Volume:</label>
-                    <input type="number" id="vEdit" value="" readonly />
-                    <lable for="aedit">Meter<sup>3</sup></lable>
-                </div><br>
-                <div class="formelement">
-                    Formula : Volume=(π*Radius<sup>2</sup>*Height)/3
-                    </div><br>
-                   
-            </form>
 
+  <div class="formelement">
+    <h1><small>Volume Calculator For Cylinder And Cone</small></h1>
+  </div>
+  <div class="container">
+    <div class="content">
+      <h1>Volume Of Cylinder</h1>
+      <form>
+        <div class=formelement>
+          <lable for="aedit">Height:</lable>
+          <input id="aedit" placeholder="" />
+          <label><small>
+          Meters
+          </small></label>
+        </div><br>
+        <div class=formelement>
+          <lable for="bedit">Radius:</lable>
+          <input id="bedit" placeholder="" />
+            <label><small>
+            Meters
+            </small></label>
+        </div><br>
+        <div class=formelement>
+          <lable for="cedit">Volume:</lable>
+          <input type="number" min="0" value="0" step="any" id="cedit" placeholder="0" readonly="0" /><label><small>
+              Meters³</small></label>
+        </div><br><br>
+        <div class=formelement>
+          <input type="button" class="button" value="CALCULATE" id="calbutton1" />
+          <input type="Reset" class="button" value="RESET">
         </div>
+        <p id="stats"></p>
+        <br>
+        <div class=formula>
+          Formula is
+          Volume V = π X Radius² X Height
+        </div><br>
+      </form>
     </div>
-    <script>
-        function validate(){
-            var user1=document.getElementById("aedit").value;
-            var user2=document.getElementById("bedit").value;
-            var user3=document.getElementById("redit").value;
-            var user4=document.getElementById("hedit").value;
-            var re = /^[0-9]+$/;
-            if (re.test(user1)){
-                return true;
-      }
-            else if (re.test(user2)){
-                return true;
-         }
-         else if (re.test(user3)){
-                return true;
-         }
-         else if (re.test(user4)){
-                return true;
-         }
-            else {
-                alert('Please input numeric characters only');
-                return false;
-        }
-       
-        }
-    </script>
-    <script type="text/javascript">
-        var button;
-        button=document.querySelector("#calbutton1");
-        button.addEventListener("click",function(){
-            var atext,btext,ctext;
-            var aval,bval,cval;
-            atext=document.querySelector("#aedit");
-            btext=document.querySelector("#bedit");
-            ctext=document.querySelector("#cedit");
-    
-            aval=parseInt(atext.value);
-            bval=parseInt(btext.value);
-            cval=22/7*aval*bval*bval;
-            ctext.value=cval;
-            ctext.value=cval;
 
-        });
-        button1 = document.querySelector("#AddButton1");
-        button1.addEventListener("click",function(){
-            var aText,bText,cText;
-            var aVal,bVal,cVal;
-            hText=document.querySelector("#hEdit");
-            rText=document.querySelector("#rEdit");
-            vText=document.querySelector("#vEdit");
+    <div class="content2">
+      <h1>Volume of Cone</h1>
+      <form>
+        <div class="formelement">
+          <lable for="radiusedit">Radius:</lable>
+          <input id="radiusedit" placeholder="" />
+          <label><small>
+              Meters
+            </small></label>
+        </div><br>
+        <div class="formelement">
+          <lable for="heightedit">Height:</lable>
+          <input id="heightedit" placeholder="" />
+          <label><small>
+              Meters
+            </small></label>
+        </div><br>
+        <div class="formelement">
+          <lable for="volumeedit">Volume:</lable>
+          <input type="number" min="0" value="0" name="avol" step="any" id="volumeedit" placeholder="0"
+            readonly="0" /><label><small> Meters³</small></label>
+        </div><br><br>
+        <div class="formelement">
+          <input type="button" class="button" value="CALCULATE" id="calbutton2" />
+          <input type="Reset" class="button" value="RESET">
+        </div><br>
+        <div class="formula">
+          Formula is:
+          Volume V = π X Radius² X Height / 3
+        </div>
+        
+        <br>
+      </form>
 
-            hVal = parseInt(hText.value);
-            rVal = parseInt(rText.value);
-            vVal = (22/7*rVal*rVal)*(hVal/3);
-            vText.value = ""+vVal;
-        });
-
-    </script>
+    </div>
+  </div>
+  </div>
 </body>
+<script type="text/javascript">
+  var button;
+  button = document.querySelector("#calbutton1");
+  button.addEventListener("click", function () {
+    var atext, btext, ctext;
+    var aval, bval, cval;
+    atext = document.querySelector("#aedit");
+    btext = document.querySelector("#bedit");
+    ctext = document.querySelector("#cedit");
+
+    if(Number(atext.value)&&Number(btext.value))
+    {
+      aval=parseInt(atext.value);
+      bval=parseInt(btext.value);
+    }
+    else{
+      window.alert("enter only number");
+    }
+
+
+    
+
+    cval = 3.14 * aval * aval * bval;
+    ctext.value = "" + cval;
+  });
+</script>
+<script type="text/javascript">
+  var button;
+  button = document.querySelector("#calbutton2");
+  button.addEventListener("click", function () {
+
+    var radiustext, heighttext, volumetext;
+    var aval, bval, cval;
+
+    radiustext = document.querySelector("#radiusedit");
+    heighttext = document.querySelector("#heightedit");
+    volumetext = document.querySelector("#volumeedit");
+
+    if(Number(radiustext.value)&&Number(heighttext.value))
+    {
+      aval=parseInt(radiustext.value);
+      bval=parseInt(heighttext.value);
+    }
+    else{
+      window.alert("enter only number");
+    }
+    
+    cval = 3.14 * aval * aval * bval / 3;
+    volumetext.value = "" + cval;
+  });
+
+</script>
+<div class="fbox">
+  <div class="footer">
+    <center>
+      <p><br>Developed by:<a><u> Jegathish s</u></a>
+      </p>
+    </center>
+  </div>
+</div>
 </html>
 
 ```
 
 ## OUTPUT:
 
-![output](ou.png)
+![output](o1.png)
+## Error:
+![output](o2.png)
 
 ## Result:
 
