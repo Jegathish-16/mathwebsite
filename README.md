@@ -319,7 +319,7 @@ Publish the website in the given URL.
 ## OUTPUT:
 
 ![output](o1.png)
-## Error:
+## Alert:
 ![output](o2.png)
 
 ## Result:
